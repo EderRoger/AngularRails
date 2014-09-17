@@ -36,7 +36,7 @@ Run server
 
 Test it!!
 
-`http://localhost:3000/#/pessoas`
+`http://localhost:3000/#/people`
 
 :)
 May the force be with you!

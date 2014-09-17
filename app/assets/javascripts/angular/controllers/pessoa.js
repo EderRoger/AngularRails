@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @description
- * # PessoaCtrl
- * # PessoaListCtrl
- * Controller of the angularMongoApp
- */
 angular.module('angularRailsApp')
     .controller('PessoaCtrl', function ($scope, $http, $routeParams, $location) {
         $scope.title = "Cadastrando nova Pessoa";
@@ -32,21 +25,11 @@ angular.module('angularRailsApp')
                     $location.path('/pessoas/');
                 });
 
-                /*$http({ method: 'PUT', url: '/pessoas/'+ $scope.pessoa.id, data: json })
-                    .success(function (response) {
-                        $scope.pessoa = response;
-                        $location.path('/pessoas/');
-                    });*/
             }else{
                 $http.post('./pessoas.json', json).success(function (response) {
                     $scope.pessoa = response;
                     $location.path('./pessoas/' + $scope.pessoa.id);
                 });
-               /* $http({ method: 'POST', url: './pessoas.json', data: json })
-                    .success(function (response) {
-                        $scope.pessoa = response;
-                        $location.path('/pessoas/' + $scope.pessoa.id+'.json');
-                    });*/
             }
 
         }
